@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+    TABLE_NAME = :$1
+
+    def change
+      unless table_exists? TABLE_NAME
+        create_table TABLE_NAME do |t|
+          $2
+          t.timestamps
+        end
+      end
+    end
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>ct</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.ruby, source.rails</scope>
+</snippet>
